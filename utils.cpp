@@ -1,0 +1,26 @@
+#include "utils.h"
+//////////////////////////////////////////////////
+
+//Everything here token from Tirgul
+
+void gotoxy(int x, int y) {
+    cout.flush();
+    COORD coord;
+    coord.X = x;
+    coord.Y = y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+//////////////////////////////////////////////////////
+
+void hideCursor()
+{
+    HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_CURSOR_INFO curInfo;
+    GetConsoleCursorInfo(hStdOut, &curInfo);
+    curInfo.bVisible = FALSE; // Set to TRUE to make it visible
+    SetConsoleCursorInfo(hStdOut, &curInfo);
+}
+/////////////////////////////////////////////////////////////////
+void cls() {
+    system("cls");
+}
