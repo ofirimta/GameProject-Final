@@ -132,16 +132,24 @@ void Player::disposeItem()
 	Point drop_location = location.prevPos();
 	char disposed_char = ' ';
 
-	if (held_item == ItemType::BOMB)
+	switch (held_item)
 	{
+	case ItemType::BOMB:
 		active_bomb.activate(drop_location, current_room_index);
-		disposed_char = BOMB_CHAR;
-		screen.delInventoryAt(*this, current_room_index);
-	}
-	else if (held_item == ItemType::KEY)
-	{
-		disposed_char = KEY_CHAR;
-		screen.delInventoryAt(*this, current_room_index);
+		disposed_char = BOMB_CHAR; // '@'
+		break;
+
+	case ItemType::KEY:
+		disposed_char = KEY_CHAR; // 'K'
+
+		//עדכון הדלת שהמפתח כבר לא מוחזק
+		if (pDoor != nullptr) {
+			pDoor->setThisKey(false);
+		}
+		break;
+
+	default:
+		break;
 	}
 
 	if (disposed_char != ' ')
@@ -151,6 +159,7 @@ void Player::disposeItem()
 		drop_location.draw();
 	}
 
+	screen.delInventoryAt(*this, current_room_index);
 	setHeldItem(ItemType::NONE);
 
 
