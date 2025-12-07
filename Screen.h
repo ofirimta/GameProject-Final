@@ -26,7 +26,7 @@ class Screen
 			"iwwwwwwwwwwwwwwwwwwww                wwwwww             ww       w      wwwwwwwi", // 7
 			"i       ?          ww                wwwwww             ww         w    w    wwi", // 8   //riddle
 			"i                  ww                                   ww      ?    wwww    wwi", // 9  //riddle
-			"i                  ww       @                           ww           wwww    wwi", // 10
+			"i                  ww                                   ww           wwww    wwi", // 10
 			"i                  ww                                   ww                   wwi", // 11
 			"i          wwwwwwwwww                                   ww                   wwi", // 12
 			"i                               wwwwww                  ww                   wwi", // 13
@@ -35,7 +35,7 @@ class Screen
 			"iwwww                                                                          i", // 16
 			"iwwww                                                                          i", // 17
 			"iwwww                                                                          i", // 18
-			"iwww                                          www         K                    i", // 19
+			"iwww                                          www                              i", // 19
 			"iww                    wwwwww                 www             www       ////   1", // 20   ////door  //switch - i think that we need use one answer from this riddels in next room
 			"i                      wwwwww                 www             www              i", // 21
 			"iww                    wwwwww                 www       ?     www              i", // 22  //riddle
@@ -147,5 +147,6 @@ public:
 
 	//we have 2 similar function but we dont marge them to one because its more readable and every function can recieve different size of string.
 	//we dont need function theat chacking if we write because other function delete until ' '. and id place empty the function no enter to the loops
+
 
 };
